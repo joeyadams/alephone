@@ -303,7 +303,7 @@ bool load_level_from_map(
 						process_map_wad(wad, restoring_game, header.data_version);
 
 						if (static_world != NULL && static_world->level_name[0] != '\0' && memchr(static_world->level_name, 0, sizeof(static_world->level_name)) != NULL)
-							printf("Processed wad for level %d (%s)", (int)level_index, static_world->level_name);
+							printf("Processed wad for level %d (%s)\n", (int)level_index, static_world->level_name);
 		
 						/* Nuke our memory... */
 						free_wad(wad);
@@ -780,12 +780,12 @@ bool goto_level(
 		load_level_from_map(entry->level_number);
 		if (error_pending())
 		{
-			printf("Error occurred loading level %d", (int)entry->level_number);
+			printf("Error occurred loading level %d\n", (int)entry->level_number);
 			success = false;
 		}
 		else
 		{
-			printf("Successfully loaded level %d", (int)entry->level_number);
+			printf("Successfully loaded level %d\n", (int)entry->level_number);
 		}
 	}
 	
@@ -819,7 +819,7 @@ bool goto_level(
 		
 		if (!new_game)
 		{
-			printf("Recreating players since we're on new level.");
+			printf("Recreating players since we're on new level.\n");
 			recreate_players_for_new_level();
 		}
 		
@@ -833,13 +833,13 @@ bool goto_level(
 
 		if (film_profile.early_object_initialization)
 		{
-			printf("Initializing level");
+			printf("Initializing level\n");
 			place_initial_objects();
 			initialize_control_panels_for_level();
 		}
 		else
 		{
-			printf("Not initializing level (early_object_initialization is false)");
+			printf("Not initializing level (early_object_initialization is false)\n");
 		}
 
 		if (!new_game) 
@@ -861,7 +861,7 @@ bool goto_level(
 //	if(!success) alert_user(fatalError, strERRORS, badReadMap, -1);
 	
 	/* We be done.. */
-	printf("goto_level returned %s", success ? "true" : "false");
+	printf("goto_level returned %s\n", success ? "true" : "false");
 	return success;
 }
 

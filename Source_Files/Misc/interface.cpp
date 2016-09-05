@@ -1018,7 +1018,7 @@ bool check_level_change(
 
 	if(game_state.state==_change_level)
 	{
-		printf("Transferring to level %d", (int)game_state.current_screen);
+		printf("Transferring to level %d\n", (int)game_state.current_screen);
 		transfer_to_new_level(game_state.current_screen);
 		level_changed= true;
 	}
@@ -2157,7 +2157,7 @@ static void start_game(
 	short user,
 	bool changing_level)
 {
-	printf("start_game(%d, %s)", (int)user, changing_level ? "true" : "false");
+	printf("start_game(%d, %s)\n", (int)user, changing_level ? "true" : "false");
 
 	/* Change our menus.. */
 	toggle_menus(true);
@@ -2195,10 +2195,10 @@ static void start_game(
 	game_state.user= user;
 	game_state.flags= 0;
 
-	printf("Transitioning to _game_in_progress");
-	printf("  phase = %d", MACHINE_TICKS_PER_SECOND);
-	printf("  last_ticks_on_idle = %d", (int)game_state.last_ticks_on_idle);
-	printf("  user = %d", (int)user);
+	printf("Transitioning to _game_in_progress\n");
+	printf("  phase = %d\n", MACHINE_TICKS_PER_SECOND);
+	printf("  last_ticks_on_idle = %d\n", (int)game_state.last_ticks_on_idle);
+	printf("  user = %d\n", (int)user);
 
 	assert((!changing_level&&!get_keyboard_controller_status()) || (changing_level && get_keyboard_controller_status()));
 	if(!changing_level)

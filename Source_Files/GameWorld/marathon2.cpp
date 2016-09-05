@@ -575,7 +575,7 @@ void leaving_map(
 	void)
 {
 	if (static_world != NULL && memchr(static_world->level_name, 0, sizeof(static_world->level_name)) != NULL)
-		printf("Leaving map \"%s\"", static_world->level_name);
+		printf("Leaving map \"%s\"\n", static_world->level_name);
 
 	remove_all_projectiles();
 	remove_all_nonpersistent_effects();
@@ -624,7 +624,7 @@ void leaving_map(
 // LP: added whether a savegame is being restored (skip Pfhortran init if that's the case)
 bool entering_map(bool restoring_saved)
 {
-	printf("Entering map");
+	printf("Entering map\n");
 
 	bool success= true;
 
@@ -677,12 +677,12 @@ bool entering_map(bool restoring_saved)
 	
 	if (!success)
 	{
-		printf("entering_map failed");
+		printf("entering_map failed\n");
 		leaving_map();
 	}
 	else
 	{
-		printf("entering_map succeeded");
+		printf("entering_map succeeded\n");
 	}
 
 	return success;
