@@ -895,6 +895,7 @@ void cause_polygon_damage(
 static void game_timed_out(
 	void)
 {
+	printf("game_timed_out\n");
 	if(player_controlling_game())
 	{
 		set_game_state(_close_game);

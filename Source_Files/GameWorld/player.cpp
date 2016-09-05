@@ -1389,6 +1389,8 @@ static void update_player_teleport(
 				}
 				else /* Level change */
 				{
+					printf("Teleporting to next level\n");
+
 					short other_player_index;
 				
 					/* Everyone plays the teleporting effect out. */

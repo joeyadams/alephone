@@ -404,10 +404,76 @@ void toggle_suppression_of_background_tasks(
 	game_state.suppress_background_tasks= !game_state.suppress_background_tasks;
 }
 
+static const char *GetStateName(short state)
+{
+    switch (state)
+    {
+        case _display_intro_screens:
+            return "_display_intro_screens";
+        case _display_main_menu:
+            return "_display_main_menu";
+        case _display_chapter_heading:
+            return "_display_chapter_heading";
+        case _display_prologue:
+            return "_display_prologue";
+        case _display_epilogue:
+            return "_display_epilogue";
+        case _display_credits:
+            return "_display_credits";
+        case _display_intro_screens_for_demo:
+            return "_display_intro_screens_for_demo";
+        case _display_quit_screens:
+            return "_display_quit_screens";
+        case _game_in_progress:
+            return "_game_in_progress";
+        case _quit_game:
+            return "_quit_game";
+        case _close_game:
+            return "_close_game";
+        case _switch_demo:
+            return "_switch_demo";
+        case _revert_game:
+            return "_revert_game";
+        case _change_level:
+            return "_change_level";
+        case _begin_display_of_epilogue:
+            return "_begin_display_of_epilogue";
+        case _displaying_network_game_dialogs:
+            return "_displaying_network_game_dialogs";
+        default:
+            return NULL;
+    }
+}
+
+static void LogStateTransition(short oldState, short newState)
+{
+    char oldStateLabel[100];
+    char newStateLabel[100];
+    const char *str;
+
+    str = GetStateName(oldState);
+    if (str != NULL)
+    	strcpy(oldStateLabel, str);
+    else
+    	sprintf(oldStateLabel, "%d", (int)oldState);
+
+    str = GetStateName(newState);
+	if (str != NULL)
+		strcpy(newStateLabel, str);
+	else
+		sprintf(newStateLabel, "%d", (int)newState);
+
+	printf("%s -> %s\n", oldStateLabel, newStateLabel);
+}
+
+
 void set_game_state(
 	short new_state)
 {
 	short old_state= game_state.state;
+
+	if (old_state != new_state)
+		LogStateTransition(old_state, new_state);
 
 	switch(old_state)
 	{
