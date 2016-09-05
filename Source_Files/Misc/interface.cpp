@@ -398,6 +398,13 @@ bool player_controlling_game(
 	return player_in_control;
 }
 
+void usurp_replay(void)
+{
+	printf("Handing control of game to user\n");
+
+	game_state.user = _single_player;
+}
+
 void toggle_suppression_of_background_tasks(
 	void)
 {

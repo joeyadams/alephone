@@ -38,6 +38,7 @@ bool setup_for_replay_from_file(FileSpecifier& File, uint32 map_checksum, bool p
 bool setup_replay_from_random_resource(uint32 map_checksum);
 
 void start_recording(void);
+void vbl_usurp_replay(void);
 
 bool find_replay_to_use(bool ask_user, FileSpecifier& File);
 

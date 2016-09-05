@@ -1249,6 +1249,11 @@ void remove_timer_task(timer_task_proc proc)
 	tm_func = NULL;
 }
 
+void vbl_usurp_replay(void)
+{
+	replay.game_is_being_replayed = false;
+}
+
 void execute_timer_tasks(uint32 time)
 {
 	if (tm_func) {

@@ -1029,7 +1029,11 @@ static void handle_game_key(const SDL_Event &event)
 		if (sc == SDL_SCANCODE_ESCAPE) // (ZZZ) Quit gesture (now safer)
 		{
 			if(!player_controlling_game())
-				do_menu_item_command(mGame, iQuitGame, false);
+			{
+				usurp_replay();
+				vbl_usurp_replay();
+				// do_menu_item_command(mGame, iQuitGame, false);
+			}
 			else {
 				if(get_ticks_since_local_player_in_terminal() > 1 * TICKS_PER_SECOND) {
 					if(!game_is_networked) {

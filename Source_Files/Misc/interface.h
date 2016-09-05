@@ -251,6 +251,7 @@ void free_and_unlock_memory(void);
 void initialize_game_state(void);
 void force_game_state_change(void);
 bool player_controlling_game(void);
+void usurp_replay(void);
 
 void toggle_suppression_of_background_tasks(void);
 bool suppress_background_events(void);
