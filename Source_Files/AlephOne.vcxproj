@@ -1,0 +1,609 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{41965369-822B-477B-8117-B8DF7E8E28B1}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="cseries\BStream.cpp" />
+    <ClCompile Include="cseries\byte_swapping.cpp" />
+    <ClCompile Include="cseries\csalerts_sdl.cpp" />
+    <ClCompile Include="cseries\cscluts_sdl.cpp" />
+    <ClCompile Include="cseries\csdialogs_sdl.cpp" />
+    <ClCompile Include="cseries\csmisc_sdl.cpp" />
+    <ClCompile Include="cseries\csstrings.cpp" />
+    <ClCompile Include="cseries\FilmProfile.cpp" />
+    <ClCompile Include="cseries\mytm_sdl.cpp" />
+    <ClCompile Include="expat\xmlparse.c" />
+    <ClCompile Include="expat\xmlrole.c" />
+    <ClCompile Include="expat\xmltok.c" />
+    <ClCompile Include="expat\xmltok_impl.c" />
+    <ClCompile Include="expat\xmltok_ns.c" />
+    <ClCompile Include="ffmpeg\Movie.cpp" />
+    <ClCompile Include="ffmpeg\SDL_ffmpeg.c" />
+    <ClCompile Include="files\AStream.cpp" />
+    <ClCompile Include="files\crc.cpp" />
+    <ClCompile Include="files\FileHandler.cpp" />
+    <ClCompile Include="files\find_files_sdl.cpp" />
+    <ClCompile Include="files\game_wad.cpp" />
+    <ClCompile Include="files\import_definitions.cpp" />
+    <ClCompile Include="files\Packing.cpp" />
+    <ClCompile Include="files\preprocess_map_sdl.cpp" />
+    <ClCompile Include="files\preprocess_map_shared.cpp" />
+    <ClCompile Include="files\resource_manager.cpp" />
+    <ClCompile Include="files\SDL_rwops_ostream.cpp" />
+    <ClCompile Include="files\SDL_rwops_zzip.c" />
+    <ClCompile Include="files\wad.cpp" />
+    <ClCompile Include="files\WadImageCache.cpp" />
+    <ClCompile Include="files\wad_prefs.cpp" />
+    <ClCompile Include="files\wad_sdl.cpp" />
+    <ClCompile Include="gameworld\devices.cpp" />
+    <ClCompile Include="gameworld\dynamic_limits.cpp" />
+    <ClCompile Include="gameworld\effects.cpp" />
+    <ClCompile Include="gameworld\flood_map.cpp" />
+    <ClCompile Include="gameworld\items.cpp" />
+    <ClCompile Include="gameworld\lightsource.cpp" />
+    <ClCompile Include="gameworld\map.cpp" />
+    <ClCompile Include="gameworld\map_constructors.cpp" />
+    <ClCompile Include="gameworld\marathon2.cpp" />
+    <ClCompile Include="gameworld\media.cpp" />
+    <ClCompile Include="gameworld\monsters.cpp" />
+    <ClCompile Include="gameworld\pathfinding.cpp" />
+    <ClCompile Include="gameworld\physics.cpp" />
+    <ClCompile Include="gameworld\placement.cpp" />
+    <ClCompile Include="gameworld\platforms.cpp" />
+    <ClCompile Include="gameworld\player.cpp" />
+    <ClCompile Include="gameworld\projectiles.cpp" />
+    <ClCompile Include="gameworld\scenery.cpp" />
+    <ClCompile Include="gameworld\weapons.cpp" />
+    <ClCompile Include="gameworld\world.cpp" />
+    <ClCompile Include="input\joystick_sdl.cpp" />
+    <ClCompile Include="input\mouse_sdl.cpp" />
+    <ClCompile Include="libnat\error.c" />
+    <ClCompile Include="libnat\http.c" />
+    <ClCompile Include="libnat\libnat.c" />
+    <ClCompile Include="libnat\os_common.c" />
+    <ClCompile Include="libnat\os_unix.c" />
+    <ClCompile Include="libnat\os_win.c" />
+    <ClCompile Include="libnat\ssdp.c" />
+    <ClCompile Include="libnat\upnp.c" />
+    <ClCompile Include="libnat\utility.c" />
+    <ClCompile Include="lua\lapi.c" />
+    <ClCompile Include="lua\lauxlib.c" />
+    <ClCompile Include="lua\lbaselib.c" />
+    <ClCompile Include="lua\lbitlib.c" />
+    <ClCompile Include="lua\lcode.c" />
+    <ClCompile Include="lua\lctype.c" />
+    <ClCompile Include="lua\ldblib.c" />
+    <ClCompile Include="lua\ldebug.c" />
+    <ClCompile Include="lua\ldo.c" />
+    <ClCompile Include="lua\ldump.c" />
+    <ClCompile Include="lua\lfunc.c" />
+    <ClCompile Include="lua\lgc.c" />
+    <ClCompile Include="lua\linit.c" />
+    <ClCompile Include="lua\liolib.c" />
+    <ClCompile Include="lua\llex.c" />
+    <ClCompile Include="lua\lmathlib.c" />
+    <ClCompile Include="lua\lmem.c" />
+    <ClCompile Include="lua\lobject.c" />
+    <ClCompile Include="lua\lopcodes.c" />
+    <ClCompile Include="lua\loslib.c" />
+    <ClCompile Include="lua\lparser.c" />
+    <ClCompile Include="lua\lstate.c" />
+    <ClCompile Include="lua\lstring.c" />
+    <ClCompile Include="lua\lstrlib.c" />
+    <ClCompile Include="lua\ltable.c" />
+    <ClCompile Include="lua\ltablib.c" />
+    <ClCompile Include="lua\ltm.c" />
+    <ClCompile Include="lua\lua_hud_objects.cpp" />
+    <ClCompile Include="lua\lua_hud_script.cpp" />
+    <ClCompile Include="lua\lua_map.cpp" />
+    <ClCompile Include="lua\lua_monsters.cpp" />
+    <ClCompile Include="lua\lua_objects.cpp" />
+    <ClCompile Include="lua\lua_player.cpp" />
+    <ClCompile Include="lua\lua_projectiles.cpp" />
+    <ClCompile Include="lua\lua_saved_objects.cpp" />
+    <ClCompile Include="lua\lua_script.cpp" />
+    <ClCompile Include="lua\lua_serialize.cpp" />
+    <ClCompile Include="lua\lundump.c" />
+    <ClCompile Include="lua\lvm.c" />
+    <ClCompile Include="lua\lzio.c" />
+    <ClCompile Include="misc\ActionQueues.cpp" />
+    <ClCompile Include="misc\CircularByteBuffer.cpp" />
+    <ClCompile Include="misc\Console.cpp" />
+    <ClCompile Include="misc\DefaultStringSets.cpp" />
+    <ClCompile Include="misc\game_errors.cpp" />
+    <ClCompile Include="misc\interface.cpp" />
+    <ClCompile Include="misc\Logging.cpp" />
+    <ClCompile Include="misc\PlayerImage_sdl.cpp" />
+    <ClCompile Include="misc\PlayerName.cpp" />
+    <ClCompile Include="misc\preferences.cpp" />
+    <ClCompile Include="misc\preferences_widgets_sdl.cpp" />
+    <ClCompile Include="misc\preference_dialogs.cpp" />
+    <ClCompile Include="misc\Scenario.cpp" />
+    <ClCompile Include="misc\sdl_dialogs.cpp" />
+    <ClCompile Include="misc\sdl_widgets.cpp" />
+    <ClCompile Include="misc\shared_widgets.cpp" />
+    <ClCompile Include="misc\Statistics.cpp" />
+    <ClCompile Include="misc\thread_priority_sdl_dummy.cpp" />
+    <ClCompile Include="misc\thread_priority_sdl_macosx.cpp" />
+    <ClCompile Include="misc\thread_priority_sdl_posix.cpp" />
+    <ClCompile Include="misc\thread_priority_sdl_win32.cpp" />
+    <ClCompile Include="misc\vbl.cpp" />
+    <ClCompile Include="modelview\Dim3_Loader.cpp" />
+    <ClCompile Include="modelview\Model3D.cpp" />
+    <ClCompile Include="modelview\ModelRenderer.cpp" />
+    <ClCompile Include="modelview\StudioLoader.cpp" />
+    <ClCompile Include="modelview\WavefrontLoader.cpp" />
+    <ClCompile Include="network\ConnectPool.cpp" />
+    <ClCompile Include="network\HTTP.cpp" />
+    <ClCompile Include="network\metaserver\metaserver_dialogs.cpp" />
+    <ClCompile Include="network\metaserver\metaserver_messages.cpp" />
+    <ClCompile Include="network\metaserver\network_metaserver.cpp" />
+    <ClCompile Include="network\metaserver\SdlMetaserverClientUi.cpp" />
+    <ClCompile Include="network\network.cpp" />
+    <ClCompile Include="network\network_capabilities.cpp" />
+    <ClCompile Include="network\network_data_formats.cpp" />
+    <ClCompile Include="network\network_dialogs.cpp" />
+    <ClCompile Include="network\network_dialog_widgets_sdl.cpp" />
+    <ClCompile Include="network\network_dummy.cpp" />
+    <ClCompile Include="network\network_games.cpp" />
+    <ClCompile Include="network\network_lookup_sdl.cpp" />
+    <ClCompile Include="network\network_messages.cpp" />
+    <ClCompile Include="network\network_microphone_coreaudio.cpp" />
+    <ClCompile Include="network\network_microphone_sdl_alsa.cpp" />
+    <ClCompile Include="network\network_microphone_sdl_dummy.cpp" />
+    <ClCompile Include="network\network_microphone_sdl_win32.cpp" />
+    <ClCompile Include="network\network_microphone_shared.cpp" />
+    <ClCompile Include="network\network_speaker_sdl.cpp" />
+    <ClCompile Include="network\network_speaker_shared.cpp" />
+    <ClCompile Include="network\network_speex.cpp" />
+    <ClCompile Include="network\network_star_hub.cpp" />
+    <ClCompile Include="network\network_star_spoke.cpp" />
+    <ClCompile Include="network\network_udp.cpp" />
+    <ClCompile Include="network\RingGameProtocol.cpp" />
+    <ClCompile Include="network\SDL_netx.cpp" />
+    <ClCompile Include="network\SSLP_limited.cpp" />
+    <ClCompile Include="network\StarGameProtocol.cpp" />
+    <ClCompile Include="network\Update.cpp" />
+    <ClCompile Include="rendermain\AnimatedTextures.cpp" />
+    <ClCompile Include="rendermain\Crosshairs_SDL.cpp" />
+    <ClCompile Include="rendermain\ImageLoader_SDL.cpp" />
+    <ClCompile Include="rendermain\ImageLoader_Shared.cpp" />
+    <ClCompile Include="rendermain\OGL_Faders.cpp" />
+    <ClCompile Include="rendermain\OGL_FBO.cpp" />
+    <ClCompile Include="rendermain\OGL_Model_Def.cpp" />
+    <ClCompile Include="rendermain\OGL_Render.cpp" />
+    <ClCompile Include="rendermain\OGL_Setup.cpp" />
+    <ClCompile Include="rendermain\OGL_Shader.cpp" />
+    <ClCompile Include="rendermain\OGL_Subst_Texture_Def.cpp" />
+    <ClCompile Include="rendermain\OGL_Textures.cpp" />
+    <ClCompile Include="rendermain\Rasterizer_Shader.cpp" />
+    <ClCompile Include="rendermain\render.cpp" />
+    <ClCompile Include="rendermain\RenderPlaceObjs.cpp" />
+    <ClCompile Include="rendermain\RenderRasterize.cpp" />
+    <ClCompile Include="rendermain\RenderRasterize_Shader.cpp" />
+    <ClCompile Include="rendermain\RenderSortPoly.cpp" />
+    <ClCompile Include="rendermain\RenderVisTree.cpp" />
+    <ClCompile Include="rendermain\scottish_textures.cpp" />
+    <ClCompile Include="rendermain\shapes.cpp" />
+    <ClCompile Include="rendermain\SW_Texture_Extras.cpp" />
+    <ClCompile Include="rendermain\textures.cpp" />
+    <ClCompile Include="renderother\ChaseCam.cpp" />
+    <ClCompile Include="renderother\computer_interface.cpp" />
+    <ClCompile Include="renderother\fades.cpp" />
+    <ClCompile Include="renderother\FontHandler.cpp" />
+    <ClCompile Include="renderother\game_window.cpp" />
+    <ClCompile Include="renderother\HUDRenderer.cpp" />
+    <ClCompile Include="renderother\HUDRenderer_Lua.cpp" />
+    <ClCompile Include="renderother\HUDRenderer_OGL.cpp" />
+    <ClCompile Include="renderother\HUDRenderer_SW.cpp" />
+    <ClCompile Include="renderother\images.cpp" />
+    <ClCompile Include="renderother\Image_Blitter.cpp" />
+    <ClCompile Include="renderother\IMG_savepng.c" />
+    <ClCompile Include="renderother\motion_sensor.cpp" />
+    <ClCompile Include="renderother\OGL_Blitter.cpp" />
+    <ClCompile Include="renderother\OGL_LoadScreen.cpp" />
+    <ClCompile Include="renderother\OverheadMapRenderer.cpp" />
+    <ClCompile Include="renderother\OverheadMap_OGL.cpp" />
+    <ClCompile Include="renderother\OverheadMap_SDL.cpp" />
+    <ClCompile Include="renderother\overhead_map.cpp" />
+    <ClCompile Include="renderother\screen.cpp" />
+    <ClCompile Include="renderother\screen_drawing.cpp" />
+    <ClCompile Include="renderother\sdl_fonts.cpp" />
+    <ClCompile Include="renderother\sdl_resize.cpp" />
+    <ClCompile Include="renderother\Shape_Blitter.cpp" />
+    <ClCompile Include="renderother\TextLayoutHelper.cpp" />
+    <ClCompile Include="renderother\TextStrings.cpp" />
+    <ClCompile Include="renderother\ViewControl.cpp" />
+    <ClCompile Include="shell.cpp" />
+    <ClCompile Include="shell_misc.cpp" />
+    <ClCompile Include="sound\BasicIFFDecoder.cpp" />
+    <ClCompile Include="sound\Decoder.cpp" />
+    <ClCompile Include="sound\FFmpegDecoder.cpp" />
+    <ClCompile Include="sound\MADDecoder.cpp" />
+    <ClCompile Include="sound\Mixer.cpp" />
+    <ClCompile Include="sound\Music.cpp" />
+    <ClCompile Include="sound\ReplacementSounds.cpp" />
+    <ClCompile Include="sound\SndfileDecoder.cpp" />
+    <ClCompile Include="sound\SoundFile.cpp" />
+    <ClCompile Include="sound\SoundManager.cpp" />
+    <ClCompile Include="sound\VorbisDecoder.cpp" />
+    <ClCompile Include="tcpmess\CommunicationsChannel.cpp" />
+    <ClCompile Include="tcpmess\Message.cpp" />
+    <ClCompile Include="tcpmess\MessageDispatcher.cpp" />
+    <ClCompile Include="tcpmess\MessageHandler.cpp" />
+    <ClCompile Include="tcpmess\MessageInflater.cpp" />
+    <ClCompile Include="xml\InfoTree.cpp" />
+    <ClCompile Include="xml\Plugins.cpp" />
+    <ClCompile Include="xml\QuickSave.cpp" />
+    <ClCompile Include="xml\XML_LevelScript.cpp" />
+    <ClCompile Include="xml\XML_MakeRoot.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cseries\BStream.h" />
+    <ClInclude Include="cseries\byte_swapping.h" />
+    <ClInclude Include="cseries\csalerts.h" />
+    <ClInclude Include="cseries\cscluts.h" />
+    <ClInclude Include="cseries\csdialogs.h" />
+    <ClInclude Include="cseries\cseries.h" />
+    <ClInclude Include="cseries\csfonts.h" />
+    <ClInclude Include="cseries\csmacros.h" />
+    <ClInclude Include="cseries\csmisc.h" />
+    <ClInclude Include="cseries\cspixels.h" />
+    <ClInclude Include="cseries\csstrings.h" />
+    <ClInclude Include="cseries\cstypes.h" />
+    <ClInclude Include="cseries\FilmProfile.h" />
+    <ClInclude Include="cseries\mytm.h" />
+    <ClInclude Include="expat\ascii.h" />
+    <ClInclude Include="expat\asciitab.h" />
+    <ClInclude Include="expat\expat.h" />
+    <ClInclude Include="expat\expat_external.h" />
+    <ClInclude Include="expat\iasciitab.h" />
+    <ClInclude Include="expat\internal.h" />
+    <ClInclude Include="expat\latin1tab.h" />
+    <ClInclude Include="expat\nametab.h" />
+    <ClInclude Include="expat\utf8tab.h" />
+    <ClInclude Include="expat\xmlrole.h" />
+    <ClInclude Include="expat\xmltok.h" />
+    <ClInclude Include="expat\xmltok_impl.h" />
+    <ClInclude Include="ffmpeg\Movie.h" />
+    <ClInclude Include="ffmpeg\SDL_ffmpeg.h" />
+    <ClInclude Include="files\AStream.h" />
+    <ClInclude Include="files\crc.h" />
+    <ClInclude Include="files\extensions.h" />
+    <ClInclude Include="files\FileHandler.h" />
+    <ClInclude Include="files\find_files.h" />
+    <ClInclude Include="files\game_wad.h" />
+    <ClInclude Include="files\Packing.h" />
+    <ClInclude Include="files\resource_manager.h" />
+    <ClInclude Include="files\SDL_rwops_ostream.h" />
+    <ClInclude Include="files\SDL_rwops_zzip.h" />
+    <ClInclude Include="files\tags.h" />
+    <ClInclude Include="files\wad.h" />
+    <ClInclude Include="files\WadImageCache.h" />
+    <ClInclude Include="files\wad_prefs.h" />
+    <ClInclude Include="gameworld\dynamic_limits.h" />
+    <ClInclude Include="gameworld\editor.h" />
+    <ClInclude Include="gameworld\effects.h" />
+    <ClInclude Include="gameworld\effect_definitions.h" />
+    <ClInclude Include="gameworld\flood_map.h" />
+    <ClInclude Include="gameworld\items.h" />
+    <ClInclude Include="gameworld\item_definitions.h" />
+    <ClInclude Include="gameworld\lightsource.h" />
+    <ClInclude Include="gameworld\map.h" />
+    <ClInclude Include="gameworld\media.h" />
+    <ClInclude Include="gameworld\media_definitions.h" />
+    <ClInclude Include="gameworld\monsters.h" />
+    <ClInclude Include="gameworld\monster_definitions.h" />
+    <ClInclude Include="gameworld\physics_models.h" />
+    <ClInclude Include="gameworld\platforms.h" />
+    <ClInclude Include="gameworld\platform_definitions.h" />
+    <ClInclude Include="gameworld\player.h" />
+    <ClInclude Include="gameworld\projectiles.h" />
+    <ClInclude Include="gameworld\projectile_definitions.h" />
+    <ClInclude Include="gameworld\scenery.h" />
+    <ClInclude Include="gameworld\scenery_definitions.h" />
+    <ClInclude Include="gameworld\TickBasedCircularQueue.h" />
+    <ClInclude Include="gameworld\weapons.h" />
+    <ClInclude Include="gameworld\weapon_definitions.h" />
+    <ClInclude Include="gameworld\world.h" />
+    <ClInclude Include="input\joystick.h" />
+    <ClInclude Include="input\mouse.h" />
+    <ClInclude Include="libnat\error.h" />
+    <ClInclude Include="libnat\http.h" />
+    <ClInclude Include="libnat\libnat.h" />
+    <ClInclude Include="libnat\os.h" />
+    <ClInclude Include="libnat\os_common.h" />
+    <ClInclude Include="libnat\ssdp.h" />
+    <ClInclude Include="libnat\utility.h" />
+    <ClInclude Include="lua\language_definition.h" />
+    <ClInclude Include="lua\lapi.h" />
+    <ClInclude Include="lua\lauxlib.h" />
+    <ClInclude Include="lua\lcode.h" />
+    <ClInclude Include="lua\lctype.h" />
+    <ClInclude Include="lua\ldebug.h" />
+    <ClInclude Include="lua\ldo.h" />
+    <ClInclude Include="lua\lfunc.h" />
+    <ClInclude Include="lua\lgc.h" />
+    <ClInclude Include="lua\llex.h" />
+    <ClInclude Include="lua\llimits.h" />
+    <ClInclude Include="lua\lmem.h" />
+    <ClInclude Include="lua\lobject.h" />
+    <ClInclude Include="lua\lopcodes.h" />
+    <ClInclude Include="lua\lparser.h" />
+    <ClInclude Include="lua\lstate.h" />
+    <ClInclude Include="lua\lstring.h" />
+    <ClInclude Include="lua\ltable.h" />
+    <ClInclude Include="lua\ltm.h" />
+    <ClInclude Include="lua\lua.h" />
+    <ClInclude Include="lua\luaconf.h" />
+    <ClInclude Include="lua\lualib.h" />
+    <ClInclude Include="lua\lua_hud_objects.h" />
+    <ClInclude Include="lua\lua_hud_script.h" />
+    <ClInclude Include="lua\lua_map.h" />
+    <ClInclude Include="lua\lua_mnemonics.h" />
+    <ClInclude Include="lua\lua_monsters.h" />
+    <ClInclude Include="lua\lua_objects.h" />
+    <ClInclude Include="lua\lua_player.h" />
+    <ClInclude Include="lua\lua_projectiles.h" />
+    <ClInclude Include="lua\lua_saved_objects.h" />
+    <ClInclude Include="lua\lua_script.h" />
+    <ClInclude Include="lua\lua_serialize.h" />
+    <ClInclude Include="lua\lua_templates.h" />
+    <ClInclude Include="lua\lundump.h" />
+    <ClInclude Include="lua\lvm.h" />
+    <ClInclude Include="lua\lzio.h" />
+    <ClInclude Include="misc\ActionQueues.h" />
+    <ClInclude Include="misc\AlephSansMono-Bold.h" />
+    <ClInclude Include="misc\alephversion.h" />
+    <ClInclude Include="misc\binders.h" />
+    <ClInclude Include="misc\CircularByteBuffer.h" />
+    <ClInclude Include="misc\CircularQueue.h" />
+    <ClInclude Include="misc\Console.h" />
+    <ClInclude Include="misc\CourierPrime.h" />
+    <ClInclude Include="misc\CourierPrimeBold.h" />
+    <ClInclude Include="misc\CourierPrimeBoldItalic.h" />
+    <ClInclude Include="misc\CourierPrimeItalic.h" />
+    <ClInclude Include="misc\DefaultStringSets.h" />
+    <ClInclude Include="misc\game_errors.h" />
+    <ClInclude Include="misc\interface.h" />
+    <ClInclude Include="misc\interface_menus.h" />
+    <ClInclude Include="misc\key_definitions.h" />
+    <ClInclude Include="misc\Logging.h" />
+    <ClInclude Include="misc\PlayerImage_sdl.h" />
+    <ClInclude Include="misc\PlayerName.h" />
+    <ClInclude Include="misc\powered_by_alephone.h" />
+    <ClInclude Include="misc\preferences.h" />
+    <ClInclude Include="misc\preferences_widgets_sdl.h" />
+    <ClInclude Include="misc\preference_dialogs.h" />
+    <ClInclude Include="misc\ProFontAO.h" />
+    <ClInclude Include="misc\progress.h" />
+    <ClInclude Include="misc\Random.h" />
+    <ClInclude Include="misc\Scenario.h" />
+    <ClInclude Include="misc\sdl_dialogs.h" />
+    <ClInclude Include="misc\sdl_network.h" />
+    <ClInclude Include="misc\sdl_widgets.h" />
+    <ClInclude Include="misc\shared_widgets.h" />
+    <ClInclude Include="misc\Statistics.h" />
+    <ClInclude Include="misc\thread_priority_sdl.h" />
+    <ClInclude Include="misc\vbl.h" />
+    <ClInclude Include="misc\vbl_definitions.h" />
+    <ClInclude Include="misc\VecOps.h" />
+    <ClInclude Include="misc\WindowedNthElementFinder.h" />
+    <ClInclude Include="modelview\Dim3_Loader.h" />
+    <ClInclude Include="modelview\Model3D.h" />
+    <ClInclude Include="modelview\ModelRenderer.h" />
+    <ClInclude Include="modelview\StudioLoader.h" />
+    <ClInclude Include="modelview\WavefrontLoader.h" />
+    <ClInclude Include="network\ConnectPool.h" />
+    <ClInclude Include="network\HTTP.h" />
+    <ClInclude Include="network\metaserver\metaserver_dialogs.h" />
+    <ClInclude Include="network\metaserver\metaserver_messages.h" />
+    <ClInclude Include="network\metaserver\network_metaserver.h" />
+    <ClInclude Include="network\network.h" />
+    <ClInclude Include="network\NetworkGameProtocol.h" />
+    <ClInclude Include="network\network_audio_shared.h" />
+    <ClInclude Include="network\network_capabilities.h" />
+    <ClInclude Include="network\network_data_formats.h" />
+    <ClInclude Include="network\network_dialogs.h" />
+    <ClInclude Include="network\network_dialog_widgets_sdl.h" />
+    <ClInclude Include="network\network_distribution_types.h" />
+    <ClInclude Include="network\network_games.h" />
+    <ClInclude Include="network\network_lookup_sdl.h" />
+    <ClInclude Include="network\network_messages.h" />
+    <ClInclude Include="network\network_microphone_shared.h" />
+    <ClInclude Include="network\network_private.h" />
+    <ClInclude Include="network\network_sound.h" />
+    <ClInclude Include="network\network_speaker_sdl.h" />
+    <ClInclude Include="network\network_speex.h" />
+    <ClInclude Include="network\network_star.h" />
+    <ClInclude Include="network\RingGameProtocol.h" />
+    <ClInclude Include="network\SDL_netx.h" />
+    <ClInclude Include="network\SSLP_API.h" />
+    <ClInclude Include="network\SSLP_Protocol.h" />
+    <ClInclude Include="network\StarGameProtocol.h" />
+    <ClInclude Include="network\Update.h" />
+    <ClInclude Include="rendermain\AnimatedTextures.h" />
+    <ClInclude Include="rendermain\collection_definition.h" />
+    <ClInclude Include="rendermain\Crosshairs.h" />
+    <ClInclude Include="rendermain\DDS.h" />
+    <ClInclude Include="rendermain\ImageLoader.h" />
+    <ClInclude Include="rendermain\low_level_textures.h" />
+    <ClInclude Include="rendermain\OGL_Faders.h" />
+    <ClInclude Include="rendermain\OGL_FBO.h" />
+    <ClInclude Include="rendermain\OGL_Headers.h" />
+    <ClInclude Include="rendermain\OGL_Model_Def.h" />
+    <ClInclude Include="rendermain\OGL_Render.h" />
+    <ClInclude Include="rendermain\OGL_Setup.h" />
+    <ClInclude Include="rendermain\OGL_Shader.h" />
+    <ClInclude Include="rendermain\OGL_Subst_Texture_Def.h" />
+    <ClInclude Include="rendermain\OGL_Textures.h" />
+    <ClInclude Include="rendermain\OGL_Texture_Def.h" />
+    <ClInclude Include="rendermain\Rasterizer.h" />
+    <ClInclude Include="rendermain\Rasterizer_OGL.h" />
+    <ClInclude Include="rendermain\Rasterizer_Shader.h" />
+    <ClInclude Include="rendermain\Rasterizer_SW.h" />
+    <ClInclude Include="rendermain\render.h" />
+    <ClInclude Include="rendermain\RenderPlaceObjs.h" />
+    <ClInclude Include="rendermain\RenderRasterize.h" />
+    <ClInclude Include="rendermain\RenderRasterize_Shader.h" />
+    <ClInclude Include="rendermain\RenderSortPoly.h" />
+    <ClInclude Include="rendermain\RenderVisTree.h" />
+    <ClInclude Include="rendermain\scottish_textures.h" />
+    <ClInclude Include="rendermain\shape_definitions.h" />
+    <ClInclude Include="rendermain\shape_descriptors.h" />
+    <ClInclude Include="rendermain\SW_Texture_Extras.h" />
+    <ClInclude Include="rendermain\textures.h" />
+    <ClInclude Include="rendermain\vec3.h" />
+    <ClInclude Include="renderother\ChaseCam.h" />
+    <ClInclude Include="renderother\computer_interface.h" />
+    <ClInclude Include="renderother\fades.h" />
+    <ClInclude Include="renderother\FontHandler.h" />
+    <ClInclude Include="renderother\game_window.h" />
+    <ClInclude Include="renderother\HUDRenderer.h" />
+    <ClInclude Include="renderother\HUDRenderer_Lua.h" />
+    <ClInclude Include="renderother\HUDRenderer_OGL.h" />
+    <ClInclude Include="renderother\HUDRenderer_SW.h" />
+    <ClInclude Include="renderother\images.h" />
+    <ClInclude Include="renderother\Image_Blitter.h" />
+    <ClInclude Include="renderother\IMG_savepng.h" />
+    <ClInclude Include="renderother\motion_sensor.h" />
+    <ClInclude Include="renderother\OGL_Blitter.h" />
+    <ClInclude Include="renderother\OGL_LoadScreen.h" />
+    <ClInclude Include="renderother\OverheadMapRenderer.h" />
+    <ClInclude Include="renderother\OverheadMap_OGL.h" />
+    <ClInclude Include="renderother\OverheadMap_SDL.h" />
+    <ClInclude Include="renderother\overhead_map.h" />
+    <ClInclude Include="renderother\screen.h" />
+    <ClInclude Include="renderother\screen_definitions.h" />
+    <ClInclude Include="renderother\screen_drawing.h" />
+    <ClInclude Include="renderother\screen_shared.h" />
+    <ClInclude Include="renderother\sdl_fonts.h" />
+    <ClInclude Include="renderother\sdl_resize.h" />
+    <ClInclude Include="renderother\Shape_Blitter.h" />
+    <ClInclude Include="renderother\TextLayoutHelper.h" />
+    <ClInclude Include="renderother\TextStrings.h" />
+    <ClInclude Include="renderother\ViewControl.h" />
+    <ClInclude Include="shell.h" />
+    <ClInclude Include="sound\BasicIFFDecoder.h" />
+    <ClInclude Include="sound\Decoder.h" />
+    <ClInclude Include="sound\FFmpegDecoder.h" />
+    <ClInclude Include="sound\MADDecoder.h" />
+    <ClInclude Include="sound\Mixer.h" />
+    <ClInclude Include="sound\Music.h" />
+    <ClInclude Include="sound\ReplacementSounds.h" />
+    <ClInclude Include="sound\SndfileDecoder.h" />
+    <ClInclude Include="sound\song_definitions.h" />
+    <ClInclude Include="sound\SoundFile.h" />
+    <ClInclude Include="sound\SoundManager.h" />
+    <ClInclude Include="sound\SoundManagerEnums.h" />
+    <ClInclude Include="sound\sound_definitions.h" />
+    <ClInclude Include="sound\VorbisDecoder.h" />
+    <ClInclude Include="tcpmess\CommunicationsChannel.h" />
+    <ClInclude Include="tcpmess\Message.h" />
+    <ClInclude Include="tcpmess\MessageDispatcher.h" />
+    <ClInclude Include="tcpmess\MessageHandler.h" />
+    <ClInclude Include="tcpmess\MessageInflater.h" />
+    <ClInclude Include="xml\InfoTree.h" />
+    <ClInclude Include="xml\Plugins.h" />
+    <ClInclude Include="xml\QuickSave.h" />
+    <ClInclude Include="xml\XML_LevelScript.h" />
+    <ClInclude Include="xml\XML_ParseTreeRoot.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
