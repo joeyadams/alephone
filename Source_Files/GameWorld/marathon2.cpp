@@ -653,7 +653,7 @@ bool entering_map(bool restoring_saved)
 	if (game_is_networked) success= NetSync(); /* make sure everybody is ready */
 #endif // !defined(DISABLE_NETWORKING)
 
-	/* make sure nobodyÕs holding a weapon illegal in the new environment */
+	/* make sure nobodyï¿½s holding a weapon illegal in the new environment */
 	check_player_weapons_for_environment_change();
 
 #if !defined(DISABLE_NETWORKING)
@@ -661,7 +661,7 @@ bool entering_map(bool restoring_saved)
 #endif // !defined(DISABLE_NETWORKING)
 	randomize_scenery_shapes();
 
-//	reset_action_queues(); //¦¦
+//	reset_action_queues(); //ï¿½ï¿½
 //	sync_heartbeat_count();
 //	set_keyboard_controller_status(true);
 
@@ -766,13 +766,13 @@ short calculate_level_completion_state(
 {
 	short completion_state= _level_finished;
 	
-	/* if there are any monsters left on an extermination map, we havenÕt finished yet */
+	/* if there are any monsters left on an extermination map, we havenï¿½t finished yet */
 	if (static_world->mission_flags&_mission_extermination)
 	{
 		if (live_aliens_on_map()) completion_state= _level_unfinished;
 	}
 	
-	/* if there are any polygons which must be explored and have not been entered, weÕre not done */
+	/* if there are any polygons which must be explored and have not been entered, weï¿½re not done */
 	if ((static_world->mission_flags&_mission_exploration) ||
 	    (static_world->mission_flags&_mission_exploration_m1))
 	{
@@ -789,13 +789,13 @@ short calculate_level_completion_state(
 		}
 	}
 	
-	/* if there are any items left on this map, weÕre not done */
+	/* if there are any items left on this map, weï¿½re not done */
 	if (static_world->mission_flags&_mission_retrieval)
 	{
 		if (unretrieved_items_on_map()) completion_state= _level_unfinished;
 	}
 	
-	/* if there are any untoggled repair switches on this level then weÕre not there */
+	/* if there are any untoggled repair switches on this level then weï¿½re not there */
 	if ((static_world->mission_flags&_mission_repair) ||
 	    (static_world->mission_flags&_mission_repair_m1))
 	{
@@ -804,7 +804,7 @@ short calculate_level_completion_state(
 		if (untoggled_repair_switches_on_level(only_last_switch)) completion_state= _level_unfinished;
 	}
 
-	/* if weÕve finished the level, check failure conditions */
+	/* if weï¿½ve finished the level, check failure conditions */
 	if (completion_state==_level_finished)
 	{
 		/* if this is a rescue mission and more than half of the civilians died, the mission failed */
