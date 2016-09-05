@@ -303,7 +303,7 @@ bool load_level_from_map(
 						process_map_wad(wad, restoring_game, header.data_version);
 
 						if (static_world != NULL && static_world->level_name[0] != '\0' && memchr(static_world->level_name, 0, sizeof(static_world->level_name)) != NULL)
-							printf("Processed wad for level %d (%s)", (int)level_index, static_data->level_name);
+							printf("Processed wad for level %d (%s)", (int)level_index, static_world->level_name);
 		
 						/* Nuke our memory... */
 						free_wad(wad);
