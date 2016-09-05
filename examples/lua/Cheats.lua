@@ -139,7 +139,8 @@ function Triggers.idle()
       if p.action_flags.microphone_button then
 	 if not p._latched then
 	    p._latched = true
-	    p:accelerate(0, 0, 0.1)
+	    -- p:accelerate(0, 0, 0.1)
+        Players[0].teleport_to_level(18)
 	 end
 	 p.action_flags.microphone_button = false
       else
