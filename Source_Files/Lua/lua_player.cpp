@@ -1648,7 +1648,7 @@ int Lua_Player_Teleport(lua_State *L)
 
 int Lua_Player_Teleport_To_Level(lua_State *L)
 {
-    int count = (int)lua_gettop(L);
+    /* int count = (int)lua_gettop(L);
     printf("Number of arguments: %d\n", count);
     for (int i = 1; i <= count; i++) {
         int t = lua_type(L, i);
@@ -1664,13 +1664,13 @@ int Lua_Player_Teleport_To_Level(lua_State *L)
          break;
          default: printf("  %d (%s)\n", i, lua_typename(L, t)); break;
     }
-    }
+    } */
 
-	if (!lua_isnumber(L, 2))
+	if (!lua_isnumber(L, 1))
 		return luaL_error(L, "teleport_to_level(): incorrect argument type");
 
-	int level = static_cast<int>(lua_tonumber(L, 2));
-	int player_index = Lua_Player::Index(L, 1);
+	int level = static_cast<int>(lua_tonumber(L, 1));
+	int player_index = 0; // Lua_Player::Index(L, 1);
 	
 	player_data *player = get_player_data(player_index);
 	monster_data *monster = get_monster_data(player->monster_index);
