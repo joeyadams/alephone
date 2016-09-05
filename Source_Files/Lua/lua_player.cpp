@@ -1648,6 +1648,24 @@ int Lua_Player_Teleport(lua_State *L)
 
 int Lua_Player_Teleport_To_Level(lua_State *L)
 {
+    int count = (int)lua_gettop(L);
+    printf("Number of arguments: %d\n", count);
+    for (int i = 1; i <= count; i++) {
+        int t = lua_type(L, i);
+        switch (t) {
+          case LUA_TSTRING:
+            printf("  %d (string):`%s'\n", i, lua_tostring(L, i));
+          break;
+          case LUA_TBOOLEAN:
+            printf("  %d (bool): %s\n",i,lua_toboolean(L, i) ? "true" : "false");
+          break;
+          case LUA_TNUMBER:
+            printf("  %d (number): %g\n",  i, lua_tonumber(L, i));
+         break;
+         default: printf("  %d (%s)\n", i, lua_typename(L, t)); break;
+    }
+    }
+
 	if (!lua_isnumber(L, 2))
 		return luaL_error(L, "teleport_to_level(): incorrect argument type");
 
