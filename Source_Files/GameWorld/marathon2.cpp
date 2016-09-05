@@ -574,7 +574,9 @@ update_world()
 void leaving_map(
 	void)
 {
-	
+	if (static_world != NULL && memchr(static_world->level_name, 0, sizeof(static_world->level_name)) != NULL)
+		printf("Leaving map \"%s\"", static_world->level_name);
+
 	remove_all_projectiles();
 	remove_all_nonpersistent_effects();
 	
@@ -622,6 +624,8 @@ void leaving_map(
 // LP: added whether a savegame is being restored (skip Pfhortran init if that's the case)
 bool entering_map(bool restoring_saved)
 {
+	printf("Entering map");
+
 	bool success= true;
 
 	/* if any active monsters think they have paths, we'll make them reconsider */
@@ -671,7 +675,15 @@ bool entering_map(bool restoring_saved)
 	stop_fade();
 	set_fade_effect(NONE);
 	
-	if (!success) leaving_map();
+	if (!success)
+	{
+		printf("entering_map failed");
+		leaving_map();
+	}
+	else
+	{
+		printf("entering_map succeeded");
+	}
 
 	return success;
 }
