@@ -1648,11 +1648,11 @@ int Lua_Player_Teleport(lua_State *L)
 
 int Lua_Player_Teleport_To_Level(lua_State *L)
 {
-	if (!lua_isnumber(L, 2))
+	if (!lua_isnumber(L, 1))
 		return luaL_error(L, "teleport_to_level(): incorrect argument type");
 
-	int level = static_cast<int>(lua_tonumber(L, 2));
-	int player_index = Lua_Player::Index(L, 1);
+	int level = static_cast<int>(lua_tonumber(L, 1));
+	int player_index = 0; // Lua_Player::Index(L, 1);
 	
 	player_data *player = get_player_data(player_index);
 	monster_data *monster = get_monster_data(player->monster_index);
