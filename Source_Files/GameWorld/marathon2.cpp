@@ -514,6 +514,7 @@ update_world()
         // This and the following voodoo comes, effectively, from Bungie's code.
         if(theUpdateResult == kUpdateChangeLevel)
         {
+        	printf("theElapsedTime = 0: heartbeat - queue: %d\n", (int)get_heartbeat_discrepancy());
                 theElapsedTime = 0;
         }
 
@@ -536,6 +537,8 @@ update_world()
 	
 	if(theUpdateResult == kUpdateNormalCompletion && sPredictionWanted)
 	{
+		printf("Prediction before: heartbeat - queue: %d\n", (int)get_heartbeat_discrepancy());
+
 		NetUpdateUnconfirmedActionFlags();
 
 		// We use "2" to make sure there's always room for our one set of elements.
@@ -562,9 +565,14 @@ update_world()
 
 			didPredict = true;
 			
+			printf("Prediction after: heartbeat - queue: %d\n", (int)get_heartbeat_discrepancy());
+
 		} // loop while local player has flags we haven't used for prediction
 
 	} // if we should predict
+
+	// printf("update_world finished: heartbeat - queue: %d\n", (int)get_heartbeat_discrepancy());
+	get_heartbeat_discrepancy();
 
 	// we return separately 1. "whether to redraw" and 2. "how many game-ticks elapsed"
         return std::pair<bool, int16>(didPredict || theElapsedTime != 0, theElapsedTime);

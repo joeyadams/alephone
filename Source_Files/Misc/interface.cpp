@@ -480,7 +480,10 @@ void set_game_state(
 	short old_state= game_state.state;
 
 	if (old_state != new_state)
+	{
 		LogStateTransition(old_state, new_state);
+		printf("  heartbeat - queue: %d\n", (int)get_heartbeat_discrepancy());
+	}
 
 	switch(old_state)
 	{
@@ -1092,7 +1095,9 @@ bool check_level_change(
 	if(game_state.state==_change_level)
 	{
 		printf("Transferring to level %d\n", (int)game_state.current_screen);
+		printf("  heartbeat - queue: %d\n", (int)get_heartbeat_discrepancy());
 		transfer_to_new_level(game_state.current_screen);
+		printf("  heartbeat - queue after transfer: %d\n", (int)get_heartbeat_discrepancy());
 		level_changed= true;
 	}
 	

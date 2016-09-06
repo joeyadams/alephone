@@ -1216,6 +1216,8 @@ static void handle_game_key(const SDL_Event &event)
 		}
 		else if (sc == SDL_SCANCODE_F8) // Toggle the crosshairs
 		{
+			printf("Toggling crosshairs\n");
+			printf("  heartbeat - queue: %d\n", (int)get_heartbeat_discrepancy());
 			PlayInterfaceButtonSound(Sound_ButtonSuccess());
 			player_preferences->crosshairs_active = !player_preferences->crosshairs_active;
 			Crosshairs_SetActive(player_preferences->crosshairs_active);

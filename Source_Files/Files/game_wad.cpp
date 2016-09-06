@@ -101,6 +101,7 @@ Feb 15, 2002 (Br'fin (Jeremy Parsons)):
 #include "shell.h"
 #include "preferences.h"
 #include "FileHandler.h"
+#include "vbl.h"
 
 #include "editor.h"
 #include "tags.h"
@@ -754,6 +755,9 @@ bool goto_level(
 {
 	bool success= true;
 
+	printf("goto_level(%d)\n", (int)entry->level_number);
+	printf("  heartbeat - queue: %d\n", (int)get_heartbeat_discrepancy());
+
 	if(!new_game)
 	{
 		/* Clear the current map */
@@ -786,6 +790,7 @@ bool goto_level(
 		else
 		{
 			printf("Successfully loaded level %d\n", (int)entry->level_number);
+			printf("  heartbeat - queue: %d\n", (int)get_heartbeat_discrepancy());
 		}
 	}
 	
@@ -820,7 +825,9 @@ bool goto_level(
 		if (!new_game)
 		{
 			printf("Recreating players since we're on new level.\n");
+			printf("  heartbeat - queue: %d\n", (int)get_heartbeat_discrepancy());
 			recreate_players_for_new_level();
+			printf("  heartbeat - queue after recreating players: %d\n", (int)get_heartbeat_discrepancy());
 		}
 		
 		/* Load the collections */

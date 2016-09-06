@@ -317,9 +317,23 @@ bool input_controller(
 	return true; // tells the time manager library to reschedule this task
 }
 
+static int32 prior_heartbeat_discrepancy = 999999;
+
 int32 get_heartbeat_discrepancy(void)
 {
-	return (heartbeat_count - dynamic_world->tick_count) - GetRealActionQueues()->countActionFlags(0);
+	int32 result;
+	if (dynamic_world->player_count == 0)
+		result = 999999;
+	else
+		result = (heartbeat_count - dynamic_world->tick_count) - GetRealActionQueues()->countActionFlags(0);
+
+	if (prior_heartbeat_discrepancy != result)
+	{
+		printf("heartbeat - queue: %d -> %d\n", prior_heartbeat_discrepancy, result);
+		prior_heartbeat_discrepancy = result;
+	}
+
+	return result;
 }
 
 void process_action_flags(

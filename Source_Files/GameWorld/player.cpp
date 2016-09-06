@@ -155,6 +155,7 @@ May 22, 2003 (Woody Zenfell):
 #include "Console.h"
 #include "ViewControl.h"
 #include "InfoTree.h"
+#include "vbl.h"
 
 /*
 //anybody on the receiving pad of a teleport should explode (what happens to invincible guys?)
@@ -1290,6 +1291,9 @@ static void update_player_teleport(
 
 	if (PLAYER_IS_TELEPORTING(player))
 	{
+		printf("PLAYER_IS_TELEPORTING\n");
+		printf("  heartbeat - queue: %d\n", (int)get_heartbeat_discrepancy());
+
 		switch (player->teleporting_phase+= 1)
 		{
 			case PLAYER_TELEPORTING_MIDPOINT:
