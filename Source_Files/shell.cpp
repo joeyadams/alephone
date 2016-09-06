@@ -1047,6 +1047,10 @@ static void handle_game_key(const SDL_Event &event)
 #endif
 					}
 				}
+				else
+				{
+					printf("Not handling Esc because you recently accessed a terminal.\n");
+				}
 			}
 		}
 		else if (input_preferences->shell_key_bindings[_key_volume_up].count(sc))
