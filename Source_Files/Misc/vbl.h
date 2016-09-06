@@ -50,6 +50,8 @@ void get_recording_header_data(short *number_of_players, short *level_number, ui
 bool input_controller(void);
 void increment_heartbeat_count(int value = 1);
 
+int32 get_heartbeat_discrepancy(void);
+
 /* ------------ prototypes/VBL_MACINTOSH.C */
 void initialize_keyboard_controller(void);
 

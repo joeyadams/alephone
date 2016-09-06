@@ -317,6 +317,11 @@ bool input_controller(
 	return true; // tells the time manager library to reschedule this task
 }
 
+int32 get_heartbeat_discrepancy(void)
+{
+	return (heartbeat_count - dynamic_world->tick_count) - GetRealActionQueues()->countActionFlags(0);
+}
+
 void process_action_flags(
 	short player_identifier, 
 	const uint32 *action_flags, 
