@@ -101,6 +101,7 @@ Feb 8, 2003 (Woody Zenfell):
 #include "AnimatedTextures.h"
 #include "ChaseCam.h"
 #include "OGL_Setup.h"
+#include "vbl.h"
 
 // MH additions:
 #include "lua_script.h"
@@ -625,6 +626,7 @@ void leaving_map(
 bool entering_map(bool restoring_saved)
 {
 	printf("Entering map\n");
+	printf("  heartbeat - queue: %d\n", (int)get_heartbeat_discrepancy());
 
 	bool success= true;
 
